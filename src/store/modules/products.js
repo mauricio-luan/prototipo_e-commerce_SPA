@@ -2,8 +2,34 @@ export default {
   namespaced: true,
 
   state: {
-    allProducts: [],
     isLoading: false,
+    allProducts: [
+      {
+        id: 'p1',
+        name: 'Livro "Desvendando Vue 3"',
+        price: 95,
+      },
+      {
+        id: 'p2',
+        name: 'Caneca Programador (Código Fonte)',
+        price: 45,
+      },
+      {
+        id: 'p3',
+        name: 'Adesivo Vue.js (Pack com 5)',
+        price: 20,
+      },
+      {
+        id: 'p4',
+        name: 'Camiseta "It works on my machine"',
+        price: 70,
+      },
+      {
+        id: 'p5',
+        name: 'Mousepad Ergonômico Dev',
+        price: 65,
+      },
+    ],
   },
 
   mutations: {

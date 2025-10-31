@@ -3,7 +3,7 @@ export default {
 
   state: {
     isLoggedIn: false,
-    currentUser: false,
+    currentUser: '',
   },
 
   mutations: {

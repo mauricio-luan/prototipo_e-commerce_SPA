@@ -1,8 +1,15 @@
 <template>
-  <h1>Ola mundo! Seu filho da puta</h1>
+  <TheHeader title="E-commerce do Mauricio" />
   <router-view></router-view>
 </template>
 
 <script>
-export default {}
+import TheHeader from './components/TheHeader.vue'
+
+export default {
+  components: { TheHeader },
+  created() {
+    this.$store.dispatch('products/fetchProducts')
+  },
+}
 </script>
