@@ -1,11 +1,8 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <h1>Ola mundo! Seu filho da puta</h1>
+  <router-view></router-view>
 </template>
 
-<style scoped></style>
+<script>
+export default {}
+</script>
