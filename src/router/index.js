@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '@/store/index'
 
 import ProductList from '@/components/ProductList.vue'
 
@@ -45,6 +46,18 @@ const router = createRouter({
       ],
     },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  const isLogged = store.getters['auth/isAuthenticated']
+
+  if (to.meta.requiresAuth && !isLogged) {
+    next({ name: 'login' })
+  } else if (to.name === 'login' && isLogged) {
+    next({ name: 'home' })
+  } else {
+    next()
+  }
 })
 
 export default router
