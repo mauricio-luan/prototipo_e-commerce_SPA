@@ -55,8 +55,8 @@ export default {
     getAllProducts(state) {
       return state.allProducts
     },
-    getProductById(state, productId) {
-      return state.allProducts.find((p) => p.id === productId)
+    getProductById(state) {
+      return (productId) => state.allProducts.find((p) => p.id === productId)
     },
   },
 }

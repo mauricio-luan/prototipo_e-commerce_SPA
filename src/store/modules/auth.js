@@ -2,7 +2,7 @@ export default {
   namespaced: true,
 
   state: {
-    isLoggedIn: false,
+    isLoggedIn: true,
     currentUser: '',
   },
 
