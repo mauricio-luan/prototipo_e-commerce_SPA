@@ -23,6 +23,7 @@ export default {
 
   computed: {
     ...mapGetters('products', ['getProductById']),
+
     product() {
       return this.getProductById(this.productId)
     },

@@ -7,20 +7,21 @@ export default {
   },
 
   mutations: {
-    setUser(state) {
+    setUser(state, payload) {
       state.isLoggedIn = true
+      state.currentUser = payload.username
     },
+
     clearUser(state) {
       state.isLoggedIn = false
     },
   },
 
   actions: {
-    login(context) {
-      setTimeout(() => {
-        context.commit('setUser')
-      }, 2000)
+    login(context, payload) {
+      context.commit('setUser', payload)
     },
+
     logout(context) {
       context.commit('clearUser')
     },
@@ -30,6 +31,7 @@ export default {
     isAuthenticated(state) {
       return state.isLoggedIn
     },
+
     getUserName(state) {
       return state.currentUser
     },

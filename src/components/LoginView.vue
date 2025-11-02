@@ -19,7 +19,7 @@ export default {
 
   methods: {
     login() {
-      this.$store.dispatch('auth/login')
+      this.$store.dispatch('auth/login', { username: this.userName })
       this.$router.push({ name: 'dashboard' })
     },
   },

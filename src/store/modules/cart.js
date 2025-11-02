@@ -9,8 +9,9 @@ export default {
     pushProductToCart(state, productId) {
       state.items.push(productId)
     },
+
     clearCart(state) {
-      state.items = null //validar se é assim que eu limpo o array
+      state.items = []
     },
   },
 
@@ -25,7 +26,15 @@ export default {
     cartItemsCount(state) {
       return state.items.length
     },
-    cartTotalPrice(state, _getters, _rootState, rootGetters) {
+
+    cartFull(state, _, __, rootGetters) {
+      const allProducts = rootGetters['products/getAllProducts']
+      return state.items.map((productId) => {
+        return allProducts.find((p) => p.id === productId)
+      })
+    },
+
+    cartTotalPrice(state, _, __, rootGetters) {
       const allProducts = rootGetters['products/getAllProducts']
       return state.items.reduce((total, productId) => {
         const product = allProducts.find((p) => p.id === productId)
